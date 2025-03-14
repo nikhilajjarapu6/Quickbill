@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./login.css" >
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="form">
+            <input type="text" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <!-- <p>Don't have an account? <a href="register">Register here</a></p> controller rendering  -->
+        <p>Don't have an account? <a href="/register">Register here</a></p>
+    </div>
+
+    <script>
+        document.getElementById('form').addEventListener("submit", function(event){
+            event.preventDefault();
+            const email=document.querySelector('#email').value
+            const password=document.querySelector('#password').value
+            fetch(`/api/auth/${email}/${password}`,{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify()
+            })
+            .then(response=>{
+                console.log(response);
+                if(response.ok){
+                    return response.json();
+                }
+                else{
+                    throw new Error("Network issue")
+                }
+                
+                
+            })
+            .then(data=>{
+                if(data!=null){
+                    window.location.href='/itemsMenu'
+                }
+                else{
+                    throw new Error("enter correct username and password")
+                }
+                
+            })
+            .catch(error=>{
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            })
+    
+        })
+
+    </script>
+</body>
+</html>

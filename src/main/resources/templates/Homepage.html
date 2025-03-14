@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Bill POS System</title>
+    <link rel="stylesheet" href="./styles.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <div class="center">
+        <div class="content">
+            <h1>Welcome to Quick Bill POS</h1>
+            <div>
+            <button id="register" class="buttons">Register</button>
+            <button id="login" class="buttons">Login</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const buttons = document.querySelectorAll('button');
+    buttons[0].addEventListener("click", () => {
+        console.log("register");
+        window.location.href = "/register";
+    });
+    buttons[1].addEventListener("click", () => {
+        console.log("login");
+        window.location.href = "/login";
+    });
+</script>
+</html>

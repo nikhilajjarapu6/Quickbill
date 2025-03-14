@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Bill</title>
+    <link rel="stylesheet" href="bill.css">
+</head>
+<body>
+    <div class="bill-container">
+        <h2>Quick Bill</h2>
+        <p>Blah Blah Blah Blah</p>
+        <p>Opp Road Ameerpet Pillor No 7</p>
+        <p>Ameerpet Hyderabad</p>
+
+        <div class="order-summary">
+            <p>Order ID: <span id="order-id"></span></p>
+            <p>Total Amount: ₹<span id="total-amount"></span></p>
+            <!-- You can add more dynamic details as needed -->
+        </div>
+
+        <div class="footer">
+            <p>Thank you for your order!</p>
+        </div>
+    </div>
+
+    <script>
+        // Simulate order data
+        const orderData = {
+            orderId: 12345,
+            totalAmount: 500
+        };
+
+        // Display order data
+        document.getElementById('order-id').textContent = orderData.orderId;
+        document.getElementById('total-amount').textContent = orderData.totalAmount;
+    </script>
+</body>
+</html>

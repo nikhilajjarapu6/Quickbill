@@ -1,0 +1,97 @@
+/* General Styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Beautiful dark gradient */
+    background-size: cover;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   /*  background-color: rgba(0, 0, 0, 0.5); Semi-transparent overlay
+    background-color: #040F0F; Semi-transparent background */
+    background-image: url(./BG.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+}
+
+.center::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    filter: blur(10px); /* Apply blur to the background */
+    z-index: -1; /* Place behind the content */
+}
+
+.content {
+    position: relative;
+    text-align: center;
+    color: #f1f1f1;
+    width: 1000px;
+    border: 1px solid white;
+    border-radius: 10px;
+    height: 500px;
+    background-color: rgba(80,130, 130, 0.137); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1; /* Place above the blurred background */
+}
+
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+/* Button Styles */
+.buttons {
+    background-color: #ff4500; /* Vibrant orange */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.buttons:hover {
+    background-color: #fa2500;
+    transform: scale(1.05);
+}
+
+.buttons:focus {
+    outline: none;
+}
+
+.buttons:active {
+    background-color: #e2441c;
+    transform: scale(0.98);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .buttons {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
